@@ -1,11 +1,11 @@
 Clipdict
 ===
 
-Written in Python 2.7.x and Qt 4.7.x
+Written in Python 2.7 and Qt 4.8 via PyQt
+You need to get an api key from api.seslisozluk.com enter it to API_KEY variable
+
 Warning : İt's a web dependent app it uses seslisozluk as dictionary
 İt could be more useful if binded to keyboard shortcut
-İ tested it in Xubuntu 11.10 and it should OK with other distros but 
-I dont really know if it will work on Windows or not 
-İf you try please let me know
+Works without a problem under GNU/Linux systems. It also works on Windows but you need to copy something in order to read from the clipboard  
 
 Licenced under GNU General Public License v3
