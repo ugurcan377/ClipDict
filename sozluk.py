@@ -25,7 +25,7 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 from ui_sozluk import Ui_MainWindow
 
-API_KEY = "0b6aa3b517173846c0c1a79bfd0851aa"
+API_KEY = ""
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
