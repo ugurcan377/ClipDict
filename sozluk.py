@@ -48,7 +48,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
 
     def get_query(self):
-        selection = self.myClipBoard.text("plain",QtGui.QClipboard.Selection)
+        selection = unicode(self.myClipBoard.text("plain",QtGui.QClipboard.Selection))
         self.lineEdit.setText(selection)
         return selection
 
@@ -80,9 +80,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
     def buttons_clicked(self):
         if (self.sender().objectName == self.pushButton.objectName):
-            self.query = self.lineEdit.text()
+            self.query = unicode(self.lineEdit.text())
         else:
-            self.query = self.get_query()
+            self.query = unicode(self.get_query())
         res_event = self.make_request()
         self.meanings = self.get_json(res_event)
         self.show_data()
