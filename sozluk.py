@@ -55,8 +55,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def make_request(self):
         lang_pair = self.comboBox.currentText()
         if (len(self.query) < 30):
-            req_str = "http://api.seslisozluk.com/?key=%s&lang_from=%s&lang_to=%s&query=%s&callback=?" %(self.api_key,self.lang_dict[str(lang_pair)]["from"], self.lang_dict[str(lang_pair)]["to"], self.query.replace("\n",""))
-            print req_str
+            self.query = urllib2.quote(self.query.encode("utf8"))
+            req_str = "http://api.seslisozluk.com/?key=%s&lang_from=%s&lang_to=%s&query=%s&callback=?" %(self.api_key,self.lang_dict[str(lang_pair)]["from"], self.lang_dict[str(lang_pair)]["to"],self.query)
+            #print req_str
             req = urllib2.Request(req_str)
             response = urllib2.urlopen(req)
             return response.read()
